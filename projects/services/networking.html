@@ -1,0 +1,117 @@
+
+<h2>Networking</h2>
+
+<p class="content-intro">
+The networking layer was designed using a Hub-and-Spoke architecture to provide
+centralized management, secure communication, and scalable hybrid connectivity
+between Microsoft Azure and the on-premises infrastructure.
+</p>
+
+<h3>Overview</h3>
+
+<p>
+The Azure environment separates infrastructure services from production workloads
+using dedicated Virtual Networks and subnets. Shared services such as Azure Firewall,
+Azure Bastion, VPN Gateway, monitoring, and DNS are hosted inside the Hub Virtual
+Network, while application resources are deployed within isolated spoke networks.
+This design improves scalability, simplifies management, and minimizes lateral movement
+between workloads.
+</p>
+
+<div class="tags">
+
+<span>Azure Virtual Network</span>
+<span>Hub-Spoke</span>
+<span>VNet Peering</span>
+<span>Global VNet Peering</span>
+<span>ExpressRoute</span>
+<span>Site-to-Site VPN</span>
+<span>Azure Bastion</span>
+<span>Azure Firewall</span>
+<span>Internal Load Balancer</span>
+<span>Private Endpoint</span>
+
+</div>
+
+<h3>Architecture</h3>
+
+<p>
+The primary region contains a Hub Virtual Network hosting shared networking
+services including Azure Firewall, Bastion, VPN Gateway, monitoring resources,
+and management services. Production workloads are deployed within a dedicated
+Spoke Virtual Network containing separate Application and Data subnets.
+Communication between VNets is achieved through VNet Peering while maintaining
+network isolation.
+</p>
+
+<img src="../assets/infra2.png" alt="Hybrid Network Architecture">
+
+<h3>Hybrid Connectivity</h3>
+
+<ul>
+
+<li>ExpressRoute provides the primary private connection between Azure and the on-premises environment.</li>
+
+<li>Site-to-Site VPN acts as a redundant backup connection during outages.</li>
+
+<li>VPN Gateway terminates encrypted tunnels before routing traffic into Azure.</li>
+
+<li>Traffic remains on Microsoft's backbone network whenever possible.</li>
+
+<li>Private Endpoints provide secure access to Azure PaaS services.</li>
+
+</ul>
+
+<h3>Network Segmentation</h3>
+
+<ul>
+
+<li>Dedicated AzureFirewallSubnet for centralized traffic inspection.</li>
+
+<li>GatewaySubnet hosting VPN Gateway resources.</li>
+
+<li>AzureBastionSubnet providing secure remote administration.</li>
+
+<li>ManagementSubnet for administration services.</li>
+
+<li>SharedServicesSubnet hosting DNS and monitoring resources.</li>
+
+<li>Application Subnet isolated from Data Subnet.</li>
+
+<li>Private communication between workloads using VNet Peering.</li>
+
+</ul>
+
+<h3>Traffic Flow</h3>
+
+<p>
+External traffic enters through Azure Firewall where security policies are
+evaluated before requests are forwarded toward application workloads.
+Application traffic is distributed through an Internal Load Balancer while
+database communication remains private using Private Endpoints.
+Hybrid connectivity enables secure communication between Azure resources
+and on-premises Active Directory, DNS, and file services.
+</p>
+
+<h3>Key Design Decisions</h3>
+
+<ul>
+
+<li>Centralized Hub-and-Spoke network topology.</li>
+
+<li>Dedicated subnets for infrastructure and workloads.</li>
+
+<li>Layered hybrid connectivity using ExpressRoute and VPN.</li>
+
+<li>Private service access through Private Endpoints.</li>
+
+<li>High availability using Global VNet Peering.</li>
+
+<li>Scalable architecture supporting additional spokes.</li>
+
+<li>Reduced attack surface by limiting public exposure.</li>
+
+<li>Enterprise-ready network segmentation.</li>
+
+</ul>
+

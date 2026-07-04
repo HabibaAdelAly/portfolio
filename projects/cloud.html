@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Cloud Project</title>
+    <link rel="stylesheet" href="projects.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+
+    <div class="header-left">
+
+        <a href="../index.html#projects" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <a class="logo">
+            <img src="../assets/logo.png" alt="Logo">
+        </a>
+
+    </div>
+
+    <nav>
+        <a href="#project">Project</a>
+        <a href="#arch">Architecture</a>
+        <a href="#services">Services</a>
+    </nav>
+
+</header>
+
+    <section class="hero" id="project">
+
+        <div class="hero-title">
+
+            <h1> Enterprise Hybrid Cloud Infrastructure </h1>
+            <h2 id="typing" data-titles='["Azure Administration",
+            "Hybrid Cloud","Networking", "Computing","Storage"]'></h2>        
+        </div>
+
+        <div class="intro">
+            <p> Designed and deployed a secure hybrid cloud infrastructure integrating
+                    an on-premises Windows Server environment with Microsoft Azure.
+                    Implemented segmented virtual networks, Azure Firewall, Azure Bastion,
+                    Internal Load Balancer, VNet Peering, hybrid identity synchronization,
+                    and secure remote connectivity while applying enterprise networking,
+                    least-privilege access, and layered security principles. </p>
+        </div>
+    </section>
+
+    <section class="arch" id="arch">
+        <hr class="title-line"></hr>
+
+        <div class="section-title">
+            <h2> Architecture </h2>
+            <p> High-level overview of the deployed Azure cloud infrastructure.</p>
+        </div>
+
+        <div class="mainimage" id="mainimage">
+            <img src="../assets/infra.png" alt="infra.png">
+        </div>
+
+    </section>
+
+    <section class="services" id="services">
+        <hr class="title-line"></hr>
+        <div class="section-title">
+
+            <h2>Services</h2>
+            <p>Select a category below to explore the Azure services in this environment.</p>
+        </div>
+
+        <!-- Each part of this is clickable then the card opens and takes the page to display description and limited 10 main tags services used-->
+
+        <div class="services-grid">
+
+    <div class="service-card" data-file="services/networking.html">
+
+        <div class="card-header">
+            <h4>Networking</h4>
+            <button class="arrow">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <p>Secure hybrid connectivity, routing, and virtual network design.</p>
+
+    </div>
+
+    <div class="service-card" data-file="services/identity.html">
+
+        <div class="card-header">
+            <h4>Identity</h4>
+            <button class="arrow">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>        
+        </div>
+
+        <p>Hybrid identity synchronization and centralized authentication.</p>
+
+    </div>
+
+    <div class="service-card" data-file="services/security.html">
+
+        <div class="card-header">
+            <h4>Security</h4>
+            <button class="arrow">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>        
+        </div>
+
+        <p>Layered security using Azure Firewall, NSGs, and least-privilege access.</p>
+
+    </div>
+
+    <div class="service-card" data-file="services/storage.html">
+
+        <div class="card-header">
+            <h4>Storage</h4>
+            <button class="arrow">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>        
+        </div>
+
+        <p>Secure storage services, backups, and private access.</p>
+
+    </div>
+
+    <div class="service-card" data-file="services/monitoring.html">
+
+        <div class="card-header">
+            <h4>Monitoring</h4>
+            <button class="arrow">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>        
+        </div>
+
+        <p>Centralized logging, monitoring, alerting, and incident response.</p>
+
+    </div>
+
+    <div class="service-card" data-file="services/management.html">
+
+        <div class="card-header">
+            <h4>Management</h4>
+            <button class="arrow">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>        
+        </div>
+
+        <p>Resource administration, automation, governance, and operational management.</p>
+
+    </div>
+
+</div>
+
+<div id="service-content" class="service-content"></div>
+    
+
+</section>
+    
+    <script src="../script.js"></script>
+</body>
+
+
+</html>
